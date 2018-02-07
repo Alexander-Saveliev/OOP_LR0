@@ -45,10 +45,17 @@ if let top = readNumber() {
         comaDetector %= 5
         
         print(prefix, fib1, separator: empty, terminator: empty)
+        
+        
+        assert(Int.max - fib0 - fib1 >= 0, "Overflow")
+        
         (fib0, fib1) = (fib1, fib0 + fib1)
     }
     
     print()
 }
+
+
+
 
 

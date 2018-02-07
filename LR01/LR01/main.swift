@@ -7,28 +7,21 @@
 //
 
 
-let comma = ", "
-let empty = ""
-
+let comma   = ", "
+let newLine = "\n"
 
 for i in 1...10 {
-    let delimiter = (i == 10) ? empty : comma
+    let delimiter = (i == 10) ? newLine : comma
     
-    print(i, separator: empty, terminator: delimiter)
+    print(i, terminator: delimiter)
 }
 
-
 print()
-print()
-
 
 for i in stride(from: 100, to: 0, by: -1) where i % 2 == 0 {
-    let delimiter = (i == 2) ? empty : comma
+    let delimiter = (i == 2) ? newLine : comma
     
-    print(i, separator: empty, terminator: delimiter)
+    print(i, terminator: delimiter)
 }
-
-
-print()
 
 

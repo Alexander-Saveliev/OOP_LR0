@@ -6,17 +6,14 @@
 //  Copyright © 2018 Marty. All rights reserved.
 //
 
-func readNumber() -> Int? {
-    let number = Int(readLine() ?? "")
-    
-    guard number != nil && number! >= 0 else {
-        print("Incorrect input")
-        return nil
-    }
-    
-    return number
-}
 
+func getArgy() -> [String] {
+    assert(CommandLine.arguments.count == 2, "Incorrect number of arguments. It must be 1")
+    
+    let argy = CommandLine.arguments
+    
+    return argy
+}
 
 //////////////////////////////////////////////////////////
 
@@ -28,21 +25,23 @@ let newLine = ",\n"
 var fib0 = 0
 var fib1 = 1
 
-print("Top: ", separator: empty, terminator: empty)
+let input = Int(getArgy()[1])
 
-if let top = readNumber() {
-    var comaDetector = 0
+assert(input != nil, "Incorrect input")
+
+if let top = input {
+    var wordsInString = 0
     var prefix: String!
     
     while fib1 <= top {
         if prefix == nil {
             prefix = empty
         } else {
-            prefix = comaDetector == 0 ? newLine : comma
+            prefix = wordsInString == 0 ? newLine : comma
         }
         
-        comaDetector += 1
-        comaDetector %= 5
+        wordsInString += 1
+        wordsInString %= 5
         
         print(prefix, fib1, separator: empty, terminator: empty)
         

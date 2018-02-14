@@ -59,13 +59,13 @@ let argc = CommandLine.arguments.count - 1
 assert(argc > 0, "I can't see any arguments")
 
 // Arguments
-let argy = CommandLine.arguments[1...argc]
+let argv = CommandLine.arguments[1...argc]
 assert(argc % 2 == 1, "Incorrect number of arguments. There must be an odd number of arguments")
 
 var currentInstruction = Instruction.plus
 var result             = 0.0
 
-for (i, arg) in argy.enumerated() {
+for (i, arg) in argv.enumerated() {
     if i % 2 == 0 {
         // Number
         if let operand = Double(arg) {
